@@ -1,0 +1,3 @@
+[submodule ".github/PULL_REQUEST_TEMPLATE"]
+	path = .github/PULL_REQUEST_TEMPLATE
+	url = https://github.com/Tahsib/pr-templates.git
