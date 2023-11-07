@@ -4,6 +4,6 @@
 _add an summary_
 
 ### Checklist
-[ ] Plane
+[ ] Plan
 [ ] Validate
-[ ] Format
+[ ] Format!

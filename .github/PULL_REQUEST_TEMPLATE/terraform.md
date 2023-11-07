@@ -5,5 +5,5 @@ _add an summary_
 
 ### Checklist
 [ ] Plan
-[ ] Validated
+[ ] Validate
 [ ] Format
