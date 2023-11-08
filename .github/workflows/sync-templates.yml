@@ -30,8 +30,8 @@ jobs:
           ls -la
           echo "do"
           ls -la .git/modules/.github
-          rm -rf .git/modules/pr-templates
-          ls -la .git/modules
+          rm -rf .git/modules/.github/pr-templates
+          ls -la .git/modules/.github
           echo "done"
           ls -la
           rm -f .gitmodules
