@@ -32,8 +32,12 @@ jobs:
           ls -la .git/modules/.github
           rm -rf .git/modules/.github/pr-templates
           ls -la .git/modules/.github
-          cat .git/config
           echo "done"
+          echo "-----"
+          cat .git/config
+          git config --remove-section submodule.".github/pr-templates"
+          cat .git/config
+          echo "-----"
           ls -la
           rm -f .gitmodules
           ls -la
