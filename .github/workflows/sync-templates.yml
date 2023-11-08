@@ -26,23 +26,15 @@ jobs:
       - name: Cleanup submodule
         run: |
           git submodule deinit -f -- .github/pr-templates    
-          git rm --cached .github/pr-templates
-          ls -la
-          echo "do"
-          ls -la .git/modules/.github
+          git rm --cached .github/pr-templates    
           rm -rf .git/modules/.github/pr-templates
-          ls -la .git/modules/.github
-          echo "done"
-          echo "-----"
-          cat .git/config
-          # git config --remove-section submodule.".github/pr-templates"
-          # cat .git/config
-          echo "-----"
-          ls -la
           rm -f .gitmodules
+          echo "root dir ----"
           ls -la
+          echo "github dir ----"
+          ls -la .github
           rm -rf .github/pr-templates
-          grep -ri "submodule" .
+          
           
           
           
@@ -50,7 +42,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: pr-templates-updated
-          #file_pattern: '.github/PULL_REQUEST_TEMPLATE/*'
           branch: new-pr-templates
           create_branch: true
           push_options: --force
