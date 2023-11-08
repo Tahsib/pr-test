@@ -42,7 +42,8 @@ jobs:
           rm -f .gitmodules
           ls -la
           rm -rf .github/pr-templates
-          ls -la
+          grep -ri "submodule" .
+          
           
           
       # Commit all changed files back to the repository
