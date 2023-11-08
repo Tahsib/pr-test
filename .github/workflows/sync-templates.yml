@@ -19,14 +19,13 @@ jobs:
       - name: Run workflow from PR templates repository
         run: |
           git submodule update --init --recursive
-          ls -la
           git submodule update --recursive --remote
-          ls -la
           cp -rf .github/pr-templates/* .github/PULL_REQUEST_TEMPLATE/
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: pr-templates-updated
+          file_pattern: 'PULL_REQUEST_TEMPLATE/*'
           branch: new-pr-templates
           create_branch: true
