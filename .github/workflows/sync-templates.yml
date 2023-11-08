@@ -16,17 +16,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Run workflow from PR templates repository
+      - name: Update PR Templates
         run: |
           # git submodule update --init --recursive
           # git submodule update --recursive --remote
           
           git submodule add https://github.com/Tahsib/pr-templates.git .github/pr-templates
           cp -rf .github/pr-templates/* .github/PULL_REQUEST_TEMPLATE/
+          
+      - name: Cleanup submodule
+        run: |
           git rm --cached .github/pr-templates
           rm -f .gitmodules
           rm -rf .github/pr-templates
-
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
