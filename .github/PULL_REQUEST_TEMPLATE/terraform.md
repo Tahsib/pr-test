@@ -7,3 +7,4 @@ _add an summary_
 [ ] Plan
 [ ] Validate
 [ ] Format
+[ ] Test

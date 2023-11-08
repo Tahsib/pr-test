@@ -1,0 +1,3 @@
+[submodule ".github/pr-templates"]
+	path = .github/pr-templates
+	url = https://github.com/Tahsib/pr-templates.git
