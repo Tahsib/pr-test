@@ -24,7 +24,7 @@ jobs:
           git submodule add https://github.com/Tahsib/pr-templates.git .github/pr-templates
           cp -rf .github/pr-templates/* .github/PULL_REQUEST_TEMPLATE/
           git rm --cached .github/pr-templates
-          rm -f .gitsubmodule
+          rm -f .gitmodules
           rm -rf .github/pr-templates
 
 
