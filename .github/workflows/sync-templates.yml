@@ -23,9 +23,10 @@ jobs:
           
           git submodule add https://github.com/Tahsib/pr-templates.git .github/pr-templates
           cp -rf .github/pr-templates/* .github/PULL_REQUEST_TEMPLATE/
-          git rm -rf .github/pr-templates
-          rm -rf .git/modules/pr-templates
-          git config -f .git/config --remove-section submodule.pr-templates 2> /dev/null
+          git rm --cached .github/pr-templates
+          rm -f .gitmodules
+          rm -rf .github/pr-templates
+
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
