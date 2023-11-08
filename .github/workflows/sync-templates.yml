@@ -1,12 +1,11 @@
-name: Format
-
+name: Update PR Template
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  format-code:
+  pr-template-update:
     runs-on: ubuntu-latest
 
     permissions:
@@ -17,43 +16,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Update PR Templates
-        run: |
-          # git submodule update --init --recursive
-          # git submodule update --recursive --remote
-          
+        run: | 
           git submodule add https://github.com/Tahsib/pr-templates.git .github/pr-templates
           cp -rf .github/pr-templates/* .github/PULL_REQUEST_TEMPLATE/
           
       - name: Cleanup submodule
         run: |
-          git rm --cached .github/pr-templates
-          ls -la
-          echo "do"
-          ls -la .git/modules/.github
+          echo "**** Cleaning up submodules ****"
+          git submodule deinit -f -- .github/pr-templates    
+          git rm --cached .github/pr-templates    
           rm -rf .git/modules/.github/pr-templates
-          ls -la .git/modules/.github
-          echo "done"
-          ls -la
           rm -f .gitmodules
-          ls -la
           rm -rf .github/pr-templates
-          ls -la
-          
-          
-      # Commit all changed files back to the repository
-      - uses: stefanzweifel/git-auto-commit-action@v5
+          echo "**** Cleaning Complete! ****"
+        
+      - name: Push to new-pr-template branch
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: pr-templates-updated
-          file_pattern: '.github/PULL_REQUEST_TEMPLATE/*'
           branch: new-pr-templates
           create_branch: true
           push_options: --force
-      
-      # - name: Create Pull Request
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     branch: main
-      #     title: 'Update PR templates'
-      #     body: |
-      #       Overview
-      #       _templates updated_
