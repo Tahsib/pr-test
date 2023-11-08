@@ -28,13 +28,17 @@ jobs:
         run: |
           git rm --cached .github/pr-templates
           ls -la
+          echo "do"
+          ls -la .git/modules
           rm -rf .git/modules/pr-templates
+          ls -la .git/modules
+          echo "done"
           ls -la
           rm -f .gitmodules
           ls -la
           rm -rf .github/pr-templates
           ls -la
-          ls -la .git/modules
+          
           
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
