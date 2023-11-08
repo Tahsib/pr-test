@@ -26,6 +26,7 @@ jobs:
           
       - name: Cleanup submodule
         run: |
+          git submodule deinit -f -- .github/pr-template       
           git rm --cached .github/pr-templates
           ls -la
           echo "do"
