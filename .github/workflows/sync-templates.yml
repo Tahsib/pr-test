@@ -27,8 +27,11 @@ jobs:
       - name: Cleanup submodule
         run: |
           git rm --cached .github/pr-templates
+          ls -la
           rm -f .gitmodules
+          ls -la
           rm -rf .github/pr-templates
+          ls -la .git
 
       # Commit all changed files back to the repository
       - uses: stefanzweifel/git-auto-commit-action@v5
