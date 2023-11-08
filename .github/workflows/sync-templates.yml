@@ -32,6 +32,7 @@ jobs:
           ls -la .git/modules/.github
           rm -rf .git/modules/.github/pr-templates
           ls -la .git/modules/.github
+          cat .git/config
           echo "done"
           ls -la
           rm -f .gitmodules
