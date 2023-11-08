@@ -31,3 +31,12 @@ jobs:
           branch: new-pr-templates
           create_branch: true
           push_options: --force
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: main
+          title: 'Update PR templates'
+          body: |
+            Overview
+            _templates updated_
