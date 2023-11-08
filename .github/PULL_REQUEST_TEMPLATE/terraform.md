@@ -1,4 +1,4 @@
-## Terraform Rocks! (openTF)
+## Terraform Rocks! (openTF shocks!)
 
 ### Overview
 _add an summary_
@@ -9,4 +9,3 @@ _add an summary_
 [ ] Format
 [ ] Test
 [ ] None
-{ } op``
