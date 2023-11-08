@@ -1,5 +1,4 @@
 name: Format
-
 on:
   pull_request:
     branches:
@@ -36,8 +35,8 @@ jobs:
           echo "done"
           echo "-----"
           cat .git/config
-          git config --remove-section submodule.".github/pr-templates"
-          cat .git/config
+          # git config --remove-section submodule.".github/pr-templates"
+          # cat .git/config
           echo "-----"
           ls -la
           rm -f .gitmodules
