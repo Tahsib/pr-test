@@ -55,6 +55,10 @@ jobs:
           create_branch: true
           push_options: --force
       
+      - name: Cleanup submodule
+        run: |
+          ls -la
+      
       # - name: Create Pull Request
       #   uses: peter-evans/create-pull-request@v5
       #   with:
